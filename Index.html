@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orlune Studios — Where Creativity Meets Technology</title>
+
+<meta name="description" content="Orlune Studios is a worldwide creative and technology studio specializing in website design, branding, graphic design, marketing, music and dance promotion, apps, software, AI and digital solutions.">
+
+<meta name="keywords" content="Orlune Studios, website design, graphic design, branding, marketing, music promotion, dance promotion, app development, software development, AI solutions, digital solutions">
+
+<meta name="author" content="Orlune Studios">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #050505;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5,5,5,.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    opacity: .45;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    color: #aaa;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.menu {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,.09), transparent 65%);
+    top: -200px;
+    right: -150px;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    color: #999;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: .95;
+    letter-spacing: -6px;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #777;
+}
+
+.hero p {
+    max-width: 650px;
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 38px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 24px;
+    border: 1px solid #333;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn.primary {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    border-color: white;
+}
+
+/* SECTION */
+
+section {
+    padding: 120px 0;
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 60px;
+}
+
+/* SERVICES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #222;
+    border-left: 1px solid #222;
+}
+
+.service {
+    padding: 35px;
+    min-height: 190px;
+    border-right: 1px solid #222;
+    border-bottom: 1px solid #222;
+    transition: .35s;
+}
+
+.service:hover {
+    background: #101010;
+}
+
+.service-number {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 35px;
+}
+
+.service h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-text {
+    font-size: 21px;
+    color: #aaa;
+    line-height: 1.7;
+}
+
+.about-text strong {
+    color: white;
+}
+
+.about-card {
+    border: 1px solid #222;
+    padding: 40px;
+    background: #090909;
+}
+
+.about-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    color: #777;
+}
+
+/* PROCESS */
+
+.process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.process-item {
+    border-top: 1px solid #444;
+    padding-top: 22px;
+}
+
+.process-item span {
+    color: #666;
+    font-size: 12px;
+}
+
+.process-item h3 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+}
+
+.process-item p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    padding: 140px 20px;
+}
+
+.cta h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(45px, 8vw, 90px);
+    letter-spacing: -5px;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.cta p {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 50px 0;
+    border-top: 1px solid #222;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #777;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    margin-top: 35px;
+    color: #444;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: #050505;
+        flex-direction: column;
+        padding: 30px;
+        border-bottom: 1px solid #222;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .process {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section {
+        padding: 90px 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cta h2 {
+        letter-spacing: -3px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="#home" class="logo">
+            ORLUNE<span>®</span>
+        </a>
+
+        <div class="menu" onclick="toggleMenu()">☰</div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Worldwide Creative & Technology Studio
+            </div>
+
+            <h1>
+                Where Creativity<br>
+                <span>Meets Technology.</span>
+            </h1>
+
+            <p>
+                Orlune Studios creates digital experiences, brands,
+                campaigns and technology designed to move ideas forward.
+                Worldwide. Limitless. Innovative.
+            </p>
+
+            <div class="buttons">
+
+                <a class="btn primary"
+                   href="https://wa.me/447838712699"
+                   target="_blank">
+                    Start a Project
+                </a>
+
+                <a class="btn" href="#services">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-label">
+            What We Do
+        </div>
+
+        <h2 class="section-title">
+            Creative ideas.<br>
+            Digital execution.
+        </h2>
+
+        <div class="services">
+
+            <div class="service">
+                <div class="service-number">01</div>
+                <h3>Website Design</h3>
+                <p>
+                    Modern, responsive and high-converting websites
+                    built for brands and businesses.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">02</div>
+                <h3>Graphic Design</h3>
+                <p>
+                    Posters, social graphics, digital creatives,
+                    campaigns and visual content.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">03</div>
+                <h3>Branding</h3>
+                <p>
+                    Visual identities that give businesses a strong
+                    and recognizable presence.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">04</div>
+                <h3>Marketing</h3>
+                <p>
+                    Digital campaigns and strategies designed to
+                    increase visibility and growth.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">05</div>
+                <h3>Music & Dance Promotion</h3>
+                <p>
+                    Digital promotion for artists, dancers,
+                    releases, performances and creative projects.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">06</div>
+                <h3>App Development</h3>
+                <p>
+                    Digital applications designed around real
+                    business and user needs.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">07</div>
+                <h3>Software Development</h3>
+                <p>
+                    Custom software concepts and digital tools
+                    built to solve problems.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">08</div>
+                <h3>AI Solutions</h3>
+                <p>
+                    AI-powered concepts and automation designed
+                    for modern digital workflows.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-number">09</div>
+                <h3>Digital Solutions</h3>
+                <p>
+                    Technology, content and digital systems that
+                    help ideas become reality.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-label">
+            About Orlune
+        </div>
+
+        <h2 class="section-title">
+            Built for the<br>
+            digital future.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    <strong>Orlune Studios</strong> is a worldwide
+                    creative and technology studio combining design,
+                    media, marketing and technology under one roof.
+                </p>
+
+                <br>
+
+                <p>
+                    We help individuals, artists, startups and
+                    businesses turn ideas into powerful digital
+                    experiences.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>Our Vision</h3>
+
+                <p>
+                    To become a globally recognized studio known
+                    for innovative creativity, exceptional digital
+                    experiences and accessible technology.
+                </p>
+
+                <br>
+
+                <h3>Our Mission</h3>
+
+                <p>
+                    To make high-quality creative and technological
+                    solutions accessible to people and businesses
+                    anywhere in the world.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process">
+
+    <div class="container">
+
+        <div class="section-label">
+            How We Work
+        </div>
+
+        <h2 class="section-title">
+            Simple process.<br>
+            Serious results.
+        </h2>
+
+        <div class="process">
+
+            <div class="process-item">
+                <span>01 — DISCOVER</span>
+                <h3>Understand</h3>
+                <p>
+                    We learn about your idea, audience,
+                    goals and challenges.
+                </p>
+            </div>
+
+            <div class="process-item">
+                <span>02 — CREATE</span>
+                <h3>Build</h3>
+                <p>
+                    We turn the idea into a strong creative
+                    or technological solution.
+                </p>
+            </div>
+
+            <div class="process-item">
+                <span>03 — REFINE</span>
+                <h3>Improve</h3>
+                <p>
+                    We refine the details until everything
+                    feels right.
+                </p>
+            </div>
+
+            <div class="process-item">
+                <span>04 — LAUNCH</span>
+                <h3>Deliver</h3>
+                <p>
+                    Your project goes into the world ready
+                    to make an impact.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="cta" id="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            Start Something
+        </div>
+
+        <h2>
+            Have an idea?
+        </h2>
+
+        <p>
+            Let's turn it into something extraordinary.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+
+            <a class="btn primary"
+               href="https://wa.me/447838712699"
+               target="_blank">
+                WhatsApp Us
+            </a>
+
+            <a class="btn"
+               href="mailto:hello@orlunestudios.com">
+                Email Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                ORLUNE STUDIOS ✦
+            </div>
+
+            <div class="footer-links">
+
+                <a href="https://instagram.com/Orlune.studios1"
+                   target="_blank">
+                    Instagram
+                </a>
+
+                <a href="https://facebook.com/Orlune.studios1"
+                   target="_blank">
+                    Facebook
+                </a>
+
+                <a href="https://tiktok.com/@Orlune.studios1"
+                   target="_blank">
+                    TikTok
+                </a>
+
+                <a href="https://wa.me/447838712699"
+                   target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Orlune Studios. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    document
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+              </html>
